@@ -1,39 +1,44 @@
-// using Employee constructor 
+// Import Employee Class
 const Employee = require('../lib/Employee');
 
-// creates employee object 
-test('creates an employee object', () => {
-    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
 
+// Employee object test
+test('Employee object test', () => {
+    const employee = new Employee('Alik', 1, 'Alik@gmail.com');
+    // Expections from parameters
     expect(employee.name).toEqual(expect.any(String));
     expect(employee.id).toEqual(expect.any(Number));
     expect(employee.email).toEqual(expect.any(String));
 });
 
-// gets id from getId() 
-test('gets employee name', () => {
-    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
 
+// get name method test 
+test('get name method test', () => {
+    const employee = new Employee('Alik', 1, 'Alik@gmail.com');
+    // Expections from parameters
     expect(employee.getName()).toEqual(expect.any(String));
 });
 
-// gets id from getId() 
-test('gets employee ID', () => {
-    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
 
+// get id method test 
+test('get id method test', () => {
+    const employee = new Employee('Alik', 1, 'Alik@gmail.com');
+    // Expections from parameters
     expect(employee.getId()).toEqual(expect.any(Number));
 });
 
-// gets emails from getEmail()
-test('gets employee email', () => {
-    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
 
+// gets email method test
+test('gets email method test', () => {
+    const employee = new Employee('Alik', 1, 'Alik@gmail.com');
+    // Expections from parameters
     expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email.toString()));
 });
 
-// gets role from getRole()
-test('gets role of employee', () => {
-    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
 
+// get role method test
+test('get role method test', () => {
+    const employee = new Employee('Alik', 1, 'Alik@gmail.com');
+    // Expections from parameters
     expect(employee.getRole()).toEqual("Employee");
 }); 
