@@ -22,8 +22,8 @@
 * Fill prompts (manual) 
 * Generate web page 
 
-View walk through video here - [Screencastify]()<br>
-<img src="./assets/page.png">
+View walk through video here - [Screencastify](https://watch.screencastify.com/v/zzuxHI62Dx6d4NckxLJH)<br>
+<img src="./assets/page.gif">
 
 ## License 
 This project is licensd.  https://github.com/AM0726Github/OOPS-TPG/blob/3c4ccd6cf7c2ba683bf1a3e13495db77d3325e6e/LICENSE
