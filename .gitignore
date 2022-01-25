@@ -1,2 +1,8 @@
 node_modules
 .DS_Store
+lib/Engineer.js
+lib/Intern.js
+lib/Manager.js
+__tests__/Engineer.test.js
+__tests__/Intern.test.js
+__tests__/Manager.test.js
