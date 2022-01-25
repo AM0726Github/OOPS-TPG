@@ -1,5 +1,5 @@
 // link to page creation
-const generateHTML = require('./src/generateHTML');
+const WebPage = require('./src/PageGen');
 
 // team profiles
 const Manager = require('./lib/Manager');
@@ -75,15 +75,15 @@ const addManager = () => {
         const manager = new Manager (name, id, email, officeNumber);
 
         teamArray.push(manager); 
-        console.log(manager); 
+        // console.log(manager); 
     })
 };
 
 const addEmployee = () => {
     console.log(`
-    =================
-    Adding employees to the team
-    =================
+    {******************************}
+    { Adding employees to the team }
+    {##############################}
     `);
 
     return inquirer.prompt ([
@@ -175,12 +175,12 @@ const addEmployee = () => {
         if (role === "Engineer") {
             employee = new Engineer (name, id, email, github);
 
-            console.log(employee);
+            // console.log(employee);
 
         } else if (role === "Intern") {
             employee = new Intern (name, id, email, school);
 
-            console.log(employee);
+            // console.log(employee);
         }
 
         teamArray.push(employee); 
@@ -204,7 +204,7 @@ const writeFile = data => {
             return;
         // when the profile has been created 
         } else {
-            console.log("Your team profile has been successfully created! Please check out the index.html")
+            console.log("Team profile Web Page has been created! Please check out dist/index.html")
         }
     })
 }; 

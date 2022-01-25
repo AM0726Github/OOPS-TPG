@@ -1,11 +1,11 @@
-// create Manager card
+// Manager card
 const generateManager = function (manager) {
     return `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
-                <h3>${manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
+    <div class=".g-col-4 m-4">
+        <div class="card h-100 border border-warning">
+            <div class="card-header .bg-info">
+                <h3>Manager</h4>
+                <h4>${manager.name}</h3>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${manager.id}</p>
@@ -17,14 +17,14 @@ const generateManager = function (manager) {
     `;
 }
 
-// create Engineer card
+// Engineer card
 const generateEngineer = function (engineer) {
     return `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
+    <div class=".g-col-4 m-4">
+        <div class="card h-100 border border-warning">
+            <div class="card-header .bg-info">
+                <h4>Engineer</h4>
                 <h3>${engineer.name}</h3>
-                <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
@@ -36,60 +36,56 @@ const generateEngineer = function (engineer) {
     `
 }
 
-// create Intern card 
+//Intern card 
 const generateIntern = function (intern) {
     return `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
+    <div class=".g-col-4 m-4">
+        <div class="card h-100 border border-warning">
+            <div class="card-header .bg-info">
+                <h4>Intern</h4>
                 <h3>${intern.name}</h3>
-                <h4>Intern</h4><i class="material-icons">assignment_ind</i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
                 <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
                 <p class="school">School: ${intern.school}</p>
             </div>
+        </div>
     </div>
-</div>
-    `
+`
 };
 
-// push array to page 
+// Add cards to page 
 generateHTML = (data) => {
 
-    // array for cards 
+    // cards array is empty
     pageArray = []; 
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
         const role = employee.getRole(); 
 
-
         // call manager function
         if (role === 'Manager') {
             const managerCard = generateManager(employee);
-
             pageArray.push(managerCard);
         }
 
         // call engineer function
         if (role === 'Engineer') {
             const engineerCard = generateEngineer(employee);
-
             pageArray.push(engineerCard);
         }
 
-        // call intern function 
+        // add function 
         if (role === 'Intern') {
             const internCard = generateIntern(employee);
-
             pageArray.push(internCard);
         }
         
     }
 
-    // joining strings 
+    // add to one string 
     const employeeCards = pageArray.join('')
 
     // return to generated page
@@ -115,9 +111,11 @@ const generateTeamPage = function (employeeCards) {
   </head>
   <body>
       <header>
-          <nav class="navbar" id="navbar">
-              <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
-          </nav>
+        <nav class="navbar navbar-light bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Team Profile</a>
+            </div>
+        </nav>
       </header>
       <main>
           <div class="container">
@@ -129,12 +127,10 @@ const generateTeamPage = function (employeeCards) {
       </main>
       
   </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </html>
 `;
 }
 
 // export to index
-module.exports = generateHTML; 
+module.exports = generateHTML;
